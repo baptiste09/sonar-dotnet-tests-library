@@ -40,7 +40,7 @@ public class UnitTestResultsImportSensor implements Sensor {
 
   @Override
   public void analyse(Project project, SensorContext context) {
-    if (!isReactorProject(project)) {
+    if (isReactorProject(project)) {
       analyze(context, new UnitTestResults());
     }
   }
