@@ -76,10 +76,11 @@ public class VisualStudioTestResultsFileParser {
       int timeout = xmlParserHelper.getRequiredIntAttribute("timeout");
       int aborted = xmlParserHelper.getRequiredIntAttribute("aborted");
       int inconclusive = xmlParserHelper.getRequiredIntAttribute("inconclusive");
+      int notExecuted = xmlParserHelper.getRequiredIntAttribute("notExecuted");
       int total = xmlParserHelper.getRequiredIntAttribute("total");
       int passed = xmlParserHelper.getRequiredIntAttribute("passed");
 
-      unitTestResults.add(total, passed, aborted + inconclusive, timeout + failed, errors);
+      unitTestResults.add(total, passed, aborted + inconclusive + notExecuted, timeout + failed, errors);
     }
 
     private void checkRootTag() {
